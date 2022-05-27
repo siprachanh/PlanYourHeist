@@ -12,8 +12,13 @@ namespace PlanYourHeist
             Console.WriteLine("-----------------");
 
             List<TeamMember> teamList = new List<TeamMember>();
+            Random rnd = new Random();
+            int randomNum = rnd.Next(-10, 11);
+            // generate min/max int
 
-            Bank thisBank = new Bank(100);
+
+            Bank thisBank = new Bank(100 + randomNum);
+
 
             Console.Write("Enter a team member's name: ");
             string name = Console.ReadLine();
@@ -88,6 +93,9 @@ namespace PlanYourHeist
 
             }
             newTeam.Description();
+            Console.WriteLine($"Combined skill level is: {skillSum}");
+            Console.WriteLine($"The bank's difficulty level is: {thisBank.Difficulty}");
+
             if (skillSum >= thisBank.Difficulty)
             {
 
